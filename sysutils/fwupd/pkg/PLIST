@@ -1,0 +1,197 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/dfu-tool
+@bin bin/fwupdagent
+@bin bin/fwupdmgr
+@bin bin/fwupdtool
+include/fwupd-1/
+include/fwupd-1/fwupd.h
+include/fwupd-1/fwupdplugin.h
+include/fwupd-1/libfwupd/
+include/fwupd-1/libfwupd/fwupd-client-sync.h
+include/fwupd-1/libfwupd/fwupd-client.h
+include/fwupd-1/libfwupd/fwupd-common.h
+include/fwupd-1/libfwupd/fwupd-deprecated.h
+include/fwupd-1/libfwupd/fwupd-device.h
+include/fwupd-1/libfwupd/fwupd-enums.h
+include/fwupd-1/libfwupd/fwupd-error.h
+include/fwupd-1/libfwupd/fwupd-plugin.h
+include/fwupd-1/libfwupd/fwupd-release.h
+include/fwupd-1/libfwupd/fwupd-remote.h
+include/fwupd-1/libfwupd/fwupd-security-attr.h
+include/fwupd-1/libfwupd/fwupd-version.h
+include/fwupd-1/libfwupdplugin/
+include/fwupd-1/libfwupdplugin/fu-archive.h
+include/fwupd-1/libfwupdplugin/fu-bluez-device.h
+include/fwupd-1/libfwupdplugin/fu-cabinet.h
+include/fwupd-1/libfwupdplugin/fu-chunk.h
+include/fwupd-1/libfwupdplugin/fu-common-cab.h
+include/fwupd-1/libfwupdplugin/fu-common-guid.h
+include/fwupd-1/libfwupdplugin/fu-common-version.h
+include/fwupd-1/libfwupdplugin/fu-common.h
+include/fwupd-1/libfwupdplugin/fu-context.h
+include/fwupd-1/libfwupdplugin/fu-deprecated.h
+include/fwupd-1/libfwupdplugin/fu-device-locker.h
+include/fwupd-1/libfwupdplugin/fu-device-metadata.h
+include/fwupd-1/libfwupdplugin/fu-device.h
+include/fwupd-1/libfwupdplugin/fu-dfu-firmware.h
+include/fwupd-1/libfwupdplugin/fu-dfuse-firmware.h
+include/fwupd-1/libfwupdplugin/fu-efi-signature-list.h
+include/fwupd-1/libfwupdplugin/fu-efi-signature.h
+include/fwupd-1/libfwupdplugin/fu-efivar.h
+include/fwupd-1/libfwupdplugin/fu-firmware-common.h
+include/fwupd-1/libfwupdplugin/fu-firmware.h
+include/fwupd-1/libfwupdplugin/fu-fmap-firmware.h
+include/fwupd-1/libfwupdplugin/fu-hid-device.h
+include/fwupd-1/libfwupdplugin/fu-hwids.h
+include/fwupd-1/libfwupdplugin/fu-ihex-firmware.h
+include/fwupd-1/libfwupdplugin/fu-io-channel.h
+include/fwupd-1/libfwupdplugin/fu-plugin-vfuncs.h
+include/fwupd-1/libfwupdplugin/fu-plugin.h
+include/fwupd-1/libfwupdplugin/fu-quirks.h
+include/fwupd-1/libfwupdplugin/fu-security-attrs.h
+include/fwupd-1/libfwupdplugin/fu-smbios.h
+include/fwupd-1/libfwupdplugin/fu-srec-firmware.h
+include/fwupd-1/libfwupdplugin/fu-udev-device.h
+include/fwupd-1/libfwupdplugin/fu-usb-device.h
+include/fwupd-1/libfwupdplugin/fu-volume.h
+lib/fwupd-plugins-3/
+@so lib/fwupd-plugins-3/libfu_plugin_analogix.so
+@so lib/fwupd-plugins-3/libfu_plugin_bcm57xx.so
+@so lib/fwupd-plugins-3/libfu_plugin_ccgx.so
+@so lib/fwupd-plugins-3/libfu_plugin_colorhug.so
+@so lib/fwupd-plugins-3/libfu_plugin_cpu.so
+@so lib/fwupd-plugins-3/libfu_plugin_cros_ec.so
+@so lib/fwupd-plugins-3/libfu_plugin_dell_dock.so
+@so lib/fwupd-plugins-3/libfu_plugin_dfu.so
+@so lib/fwupd-plugins-3/libfu_plugin_dfu_csr.so
+@so lib/fwupd-plugins-3/libfu_plugin_ebitdo.so
+@so lib/fwupd-plugins-3/libfu_plugin_ep963x.so
+@so lib/fwupd-plugins-3/libfu_plugin_fastboot.so
+@so lib/fwupd-plugins-3/libfu_plugin_fresco_pd.so
+@so lib/fwupd-plugins-3/libfu_plugin_goodixmoc.so
+@so lib/fwupd-plugins-3/libfu_plugin_hailuck.so
+@so lib/fwupd-plugins-3/libfu_plugin_jabra.so
+@so lib/fwupd-plugins-3/libfu_plugin_nitrokey.so
+@so lib/fwupd-plugins-3/libfu_plugin_rts54hid.so
+@so lib/fwupd-plugins-3/libfu_plugin_rts54hub.so
+@so lib/fwupd-plugins-3/libfu_plugin_solokey.so
+@so lib/fwupd-plugins-3/libfu_plugin_steelseries.so
+@so lib/fwupd-plugins-3/libfu_plugin_synaptics_cxaudio.so
+@so lib/fwupd-plugins-3/libfu_plugin_synaptics_prometheus.so
+@so lib/fwupd-plugins-3/libfu_plugin_system76_launch.so
+@so lib/fwupd-plugins-3/libfu_plugin_uefi_pk.so
+@so lib/fwupd-plugins-3/libfu_plugin_vli.so
+@so lib/fwupd-plugins-3/libfu_plugin_wacom_usb.so
+lib/girepository-1.0/Fwupd-2.0.typelib
+lib/girepository-1.0/FwupdPlugin-1.0.typelib
+@so lib/libfwupd.so
+lib/libfwupd.so.2
+@bin lib/libfwupd.so.2.0.0
+@so lib/libfwupdplugin.so
+lib/libfwupdplugin.so.2
+@bin lib/libfwupdplugin.so.2.0.0
+lib/pkgconfig/fwupd.pc
+lib/pkgconfig/fwupdplugin.pc
+libexec/fwupd/
+@bin libexec/fwupd/fwupd
+@bin libexec/fwupd/fwupd-detect-cet
+share/dbus-1/
+share/dbus-1/interfaces/
+share/dbus-1/interfaces/org.freedesktop.fwupd.xml
+share/dbus-1/system.d/
+share/dbus-1/system.d/org.freedesktop.fwupd.conf
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/fwupdmgr.fish
+share/fwupd/
+share/fwupd/add_capsule_header.py
+share/fwupd/firmware_packager.py
+share/fwupd/install_dell_bios_exe.py
+share/fwupd/metainfo/
+share/fwupd/metainfo/org.freedesktop.fwupd.remotes.lvfs-testing.metainfo.xml
+share/fwupd/metainfo/org.freedesktop.fwupd.remotes.lvfs.metainfo.xml
+share/fwupd/quirks.d/
+share/fwupd/quirks.d/analogix.quirk
+share/fwupd/quirks.d/bcm57xx.quirk
+share/fwupd/quirks.d/ccgx-ids.quirk
+share/fwupd/quirks.d/ccgx.quirk
+share/fwupd/quirks.d/colorhug.quirk
+share/fwupd/quirks.d/cpu.quirk
+share/fwupd/quirks.d/cros-ec.quirk
+share/fwupd/quirks.d/dell-dock.quirk
+share/fwupd/quirks.d/dfu-csr.quirk
+share/fwupd/quirks.d/dfu.quirk
+share/fwupd/quirks.d/ebitdo.quirk
+share/fwupd/quirks.d/ep963x.quirk
+share/fwupd/quirks.d/fastboot.quirk
+share/fwupd/quirks.d/fresco-pd.quirk
+share/fwupd/quirks.d/goodixmoc.quirk
+share/fwupd/quirks.d/hailuck.quirk
+share/fwupd/quirks.d/jabra.quirk
+share/fwupd/quirks.d/nitrokey.quirk
+share/fwupd/quirks.d/rts54hid.quirk
+share/fwupd/quirks.d/rts54hub.quirk
+share/fwupd/quirks.d/solokey.quirk
+share/fwupd/quirks.d/steelseries.quirk
+share/fwupd/quirks.d/synaptics-cxaudio.quirk
+share/fwupd/quirks.d/synaptics-prometheus.quirk
+share/fwupd/quirks.d/system76-launch.quirk
+share/fwupd/quirks.d/vli-pd.quirk
+share/fwupd/quirks.d/vli-usbhub-bizlink.quirk
+share/fwupd/quirks.d/vli-usbhub-hyper.quirk
+share/fwupd/quirks.d/vli-usbhub-lenovo.quirk
+share/fwupd/quirks.d/vli-usbhub.quirk
+share/fwupd/quirks.d/wacom-usb.quirk
+share/fwupd/remotes.d/
+share/fwupd/remotes.d/vendor/
+share/fwupd/remotes.d/vendor/firmware/
+share/fwupd/remotes.d/vendor/firmware/README.md
+share/fwupd/simple_client.py
+share/gir-1.0/Fwupd-2.0.gir
+share/gir-1.0/FwupdPlugin-1.0.gir
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/org.freedesktop.fwupd.svg
+share/locale/af/LC_MESSAGES/fwupd.mo
+share/locale/ast/LC_MESSAGES/fwupd.mo
+share/locale/ca/LC_MESSAGES/fwupd.mo
+share/locale/cs/LC_MESSAGES/fwupd.mo
+share/locale/da/LC_MESSAGES/fwupd.mo
+share/locale/de/LC_MESSAGES/fwupd.mo
+share/locale/en_GB/LC_MESSAGES/fwupd.mo
+share/locale/eo/LC_MESSAGES/fwupd.mo
+share/locale/eu/LC_MESSAGES/fwupd.mo
+share/locale/fi/LC_MESSAGES/fwupd.mo
+share/locale/fr/LC_MESSAGES/fwupd.mo
+share/locale/fur/LC_MESSAGES/fwupd.mo
+share/locale/gl/LC_MESSAGES/fwupd.mo
+share/locale/he/LC_MESSAGES/fwupd.mo
+share/locale/hi/LC_MESSAGES/fwupd.mo
+share/locale/hr/LC_MESSAGES/fwupd.mo
+share/locale/hu/LC_MESSAGES/fwupd.mo
+share/locale/id/LC_MESSAGES/fwupd.mo
+share/locale/it/LC_MESSAGES/fwupd.mo
+share/locale/kk/LC_MESSAGES/fwupd.mo
+share/locale/ko/LC_MESSAGES/fwupd.mo
+share/locale/ky/LC_MESSAGES/fwupd.mo
+share/locale/lt/LC_MESSAGES/fwupd.mo
+share/locale/nl/LC_MESSAGES/fwupd.mo
+share/locale/oc/LC_MESSAGES/fwupd.mo
+share/locale/pl/LC_MESSAGES/fwupd.mo
+share/locale/pt_BR/LC_MESSAGES/fwupd.mo
+share/locale/ru/LC_MESSAGES/fwupd.mo
+share/locale/sk/LC_MESSAGES/fwupd.mo
+share/locale/sr/LC_MESSAGES/fwupd.mo
+share/locale/sv/LC_MESSAGES/fwupd.mo
+share/locale/tr/LC_MESSAGES/fwupd.mo
+share/locale/uk/LC_MESSAGES/fwupd.mo
+share/locale/zh_CN/LC_MESSAGES/fwupd.mo
+share/locale/zh_TW/LC_MESSAGES/fwupd.mo
+share/metainfo/
+share/metainfo/org.freedesktop.fwupd.metainfo.xml
+share/vala/vapi/fwupd.deps
+share/vala/vapi/fwupd.vapi
+share/vala/vapi/fwupdplugin.deps
+share/vala/vapi/fwupdplugin.vapi
