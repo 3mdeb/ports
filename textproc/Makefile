@@ -100,6 +100,7 @@
      SUBDIR += libebml
      SUBDIR += libexttextcat
      SUBDIR += libical
+     SUBDIR += libjcat
      SUBDIR += liblrdf
      SUBDIR += libnxml
      SUBDIR += libstemmer
