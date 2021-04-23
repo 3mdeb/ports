@@ -1,0 +1,10 @@
+--- meson.build.orig	2021-04-21 16:59:36.443327226 +0200
++++ meson.build	2021-04-21 17:20:28.079484274 +0200
+@@ -129,6 +129,7 @@
+   '-Wl,-z,defs',
+   '-Wl,-z,now',
+   '-Wl,-z,ibt,-z,shstk',
++  '-lc',
+ ]
+ foreach arg: test_link_args
+   if cc.has_link_argument(arg)

@@ -1,0 +1,11 @@
+--- libjcat/meson.build.orig	2021-02-08 11:55:19 UTC
++++ libjcat/meson.build
+@@ -139,7 +139,7 @@ if get_option('introspection')
+   endif
+ 
+   python = import('python')
+-  python_interpreter = python.find_installation('python3',
++  python_interpreter = import('python').find_installation(
+     modules: [
+       'xml.etree.ElementTree',
+       'pkg_resources',

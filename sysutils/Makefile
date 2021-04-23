@@ -105,6 +105,7 @@
      SUBDIR += freeipmi
      SUBDIR += fsstress
      SUBDIR += fwa
+     SUBDIR += fwupd
      SUBDIR += fzf
      SUBDIR += gamin
      SUBDIR += gdmap

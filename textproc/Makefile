@@ -100,6 +100,7 @@
      SUBDIR += libebml
      SUBDIR += libexttextcat
      SUBDIR += libical
+     SUBDIR += libjcat
      SUBDIR += liblrdf
      SUBDIR += libnxml
      SUBDIR += libstemmer
@@ -111,6 +112,7 @@
      SUBDIR += libxml++
      SUBDIR += libxml++40
      SUBDIR += libxml++50
+     SUBDIR += libxmlb
      SUBDIR += libxmlbird
      SUBDIR += libxslt
      SUBDIR += link-grammar

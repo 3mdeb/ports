@@ -275,6 +275,7 @@
      SUBDIR += libgsf
      SUBDIR += libgtop2
      SUBDIR += libguess
+     SUBDIR += libgusb
      SUBDIR += libhid
      SUBDIR += libidn
      SUBDIR += libidn2
