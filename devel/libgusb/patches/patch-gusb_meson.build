@@ -1,0 +1,11 @@
+--- gusb/meson.build.orig	2021-03-19 02:26:26 UTC
++++ gusb/meson.build
+@@ -147,7 +147,7 @@ libgusb_gir = libgusb_girtarget[0]
+ libgusb_typelib = libgusb_girtarget[1]
+ 
+ pymod = import('python')
+-py_installation = pymod.find_installation('python3')
++py_installation = import('python').find_installation()
+ 
+ # Verify the map file is correct -- note we can't actually use the generated
+ # file for two reasons:
