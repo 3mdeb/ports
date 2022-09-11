@@ -1,0 +1,25 @@
+Index: src/list.h
+--- src/list.h.orig
++++ src/list.h
+@@ -26,6 +26,10 @@ typedef struct list_head list_t;
+ 		.next = &(name), .prev = &(name) \
+ 	}
+ 
++#ifdef __OpenBSD__
++#  undef LIST_HEAD
++#endif
++
+ #define LIST_HEAD(name) struct list_head name = LIST_HEAD_INIT(name)
+ 
+ #define INIT_LIST_HEAD(ptr)          \
+@@ -149,7 +153,9 @@ list_sort(struct list_head *head,
+ 		array[i++] = pos;
+ 	}
+ 
+-	qsort_r(array, nmemb, sizeof(*array), cmp, state);
++	(void)cmp;
++	(void)state;
++	// qsort_r(array, nmemb, sizeof(*array), cmp, state);
+ 
+ 	INIT_LIST_HEAD(head);
+ 	for (i = 0; i < nmemb; i++) {

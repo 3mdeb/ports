@@ -1,0 +1,52 @@
+Index: src/linux.c
+--- src/linux.c.orig
++++ src/linux.c
+@@ -12,16 +12,11 @@
+ #include <fcntl.h>
+ #include <inttypes.h>
+ #include <limits.h>
+-#include <linux/ethtool.h>
+-#include <linux/version.h>
+-#include <linux/sockios.h>
+ #include <net/if.h>
+-#include <scsi/scsi.h>
+ #include <stdbool.h>
+ #include <stdio.h>
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+-#include <sys/sysmacros.h>
+ #include <sys/types.h>
+ #include <sys/param.h>
+ #include <sys/stat.h>
+@@ -632,6 +627,11 @@ make_blockdev_path(uint8_t *buf, ssize_t size, struct 
+ ssize_t HIDDEN
+ make_mac_path(uint8_t *buf, ssize_t size, const char * const ifname)
+ {
++	(void)buf;
++	(void)size;
++	(void)ifname;
++	return -1;
++#if 0
+ 	struct ifreq ifr;
+ 	struct ethtool_drvinfo drvinfo = { 0, };
+ 	int fd = -1, rc;
+@@ -691,6 +691,7 @@ err:
+ 	if (fd >= 0)
+ 	        close(fd);
+ 	return ret;
++#endif
+ }
+ 
+ /************************************************************
+@@ -704,9 +705,10 @@ err:
+ int UNUSED
+ get_sector_size(int filedes)
+ {
++	(void)filedes;
+ 	int rc, sector_size = 512;
+ 
+-	rc = ioctl(filedes, BLKSSZGET, &sector_size);
++	rc = 1; //ioctl(filedes, BLKSSZGET, &sector_size);
+ 	if (rc)
+ 	        sector_size = 512;
+ 	return sector_size;

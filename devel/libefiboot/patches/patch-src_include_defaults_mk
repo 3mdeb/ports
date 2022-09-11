@@ -1,0 +1,44 @@
+Index: src/include/defaults.mk
+--- src/include/defaults.mk.orig
++++ src/include/defaults.mk
+@@ -45,13 +45,12 @@ override CFLAGS = $(_CFLAGS) \
+ 		  -fvisibility=hidden \
+ 		  $(call family,CFLAGS) \
+ 		  $(call pkg-config-cflags)
+-LDFLAGS_CLANG ?= -rtlib=compiler-rt
++LDFLAGS_CLANG ?=
+ CCLDFLAGS ?=
+ LDFLAGS ?=
+ override _CCLDFLAGS := $(CCLDFLAGS)
+ override _LDFLAGS := $(LDFLAGS)
+ override LDFLAGS = $(CFLAGS) -L. $(_LDFLAGS) $(_CCLDFLAGS) \
+-		   -Wl,--add-needed \
+ 		   -Wl,--build-id \
+ 		   -Wl,--no-allow-shlib-undefined \
+ 		   -Wl,--no-undefined-version \
+@@ -67,7 +66,7 @@ SOFLAGS_CLANG =
+ SOFLAGS ?=
+ override _SOFLAGS := $(SOFLAGS)
+ override SOFLAGS = $(_SOFLAGS) \
+-		   -shared -Wl,-soname,$@.1 \
++		   -shared \
+ 		   -Wl,--version-script=$(MAP) \
+ 		   $(call family,SOFLAGS)
+ 
+@@ -86,7 +85,7 @@ HOST_CFLAGS_CLANG ?=
+ HOST_CFLAGS ?= $(CFLAGS) $(call family,HOST_CFLAGS)
+ override _HOST_CFLAGS := $(HOST_CFLAGS)
+ override HOST_CFLAGS = $(_HOST_CFLAGS)
+-HOST_LDFLAGS_CLANG ?= -Wl,--fatal-warnings,-z,relro -rtlib=compiler-rt
++HOST_LDFLAGS_CLANG ?= -Wl,--fatal-warnings,-z,relro
+ HOST_LDFLAGS_GCC ?= -Wl,--no-undefined-version
+ HOST_LDFLAGS ?=
+ HOST_CCLDFLAGS ?=
+@@ -94,7 +93,6 @@ override _HOST_LDFLAGS := $(HOST_LDFLAGS)
+ override _HOST_CCLDFLAGS := $(HOST_CCLDFLAGS)
+ override HOST_LDFLAGS = $(HOST_CFLAGS) -L. \
+ 			$(_HOST_LDFLAGS) $(_HOST_CCLDFLAGS) \
+-			-Wl,--add-needed \
+ 			-Wl,--build-id \
+ 			-Wl,--no-allow-shlib-undefined \
+ 			-Wl,-z,now \

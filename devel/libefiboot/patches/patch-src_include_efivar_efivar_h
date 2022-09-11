@@ -1,0 +1,11 @@
+Index: src/include/efivar/efivar.h
+--- src/include/efivar/efivar.h.orig
++++ src/include/efivar/efivar.h
+@@ -16,7 +16,6 @@
+ #include <sys/types.h>
+ #include <time.h>
+ #include <unistd.h>
+-#include <byteswap.h>
+ 
+ #include <efivar/efivar-types.h>
+ 

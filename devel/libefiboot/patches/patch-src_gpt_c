@@ -1,0 +1,26 @@
+Index: src/gpt.c
+--- src/gpt.c.orig
++++ src/gpt.c
+@@ -10,7 +10,6 @@
+ 
+ #include "fix_coverity.h"
+ 
+-#include <asm/byteorder.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <inttypes.h>
+@@ -115,12 +114,12 @@ _get_num_sectors(int filedes)
+ 	uint64_t bytes=0;
+ 	int rc;
+ 	if (kernel_has_blkgetsize64()) {
+-		rc = ioctl(filedes, BLKGETSIZE64, &bytes);
++		rc = 1; //ioctl(filedes, BLKGETSIZE64, &bytes);
+ 		if (!rc)
+ 			return bytes / get_sector_size(filedes);
+ 	}
+ 
+-	rc = ioctl(filedes, BLKGETSIZE, &sectors);
++	rc = 1;// ioctl(filedes, BLKGETSIZE, &sectors);
+ 	if (rc)
+ 		return 0;
+ 

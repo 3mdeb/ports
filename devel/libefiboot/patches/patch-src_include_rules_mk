@@ -1,0 +1,12 @@
+Index: src/include/rules.mk
+--- src/include/rules.mk.orig
++++ src/include/rules.mk
+@@ -39,7 +39,7 @@ family = $(foreach FAMILY_SUFFIX,$(FAMILY_SUFFIXES),$(
+ 	$(CCLD) $(CCLDFLAGS) $(CPPFLAGS) $(SOFLAGS) \
+ 		$(foreach LDS,$(LDSCRIPTS),$(LD_DASH_T) $(LDS)) \
+ 		-o $@ $^ $(LDLIBS)
+-	ln -vfs $@ $@.1
++	ln -fs $@ $@.1
+ 
+ %.abixml : %.so
+ 	$(ABIDW) --headers-dir $(TOPDIR)/src/include/efivar/ --out-file $@ $^

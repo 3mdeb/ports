@@ -266,6 +266,7 @@
      SUBDIR += libdvdread
      SUBDIR += libdwarf
      SUBDIR += libee
+     SUBDIR += libefiboot
      SUBDIR += libestr
      SUBDIR += libev
      SUBDIR += libevent2

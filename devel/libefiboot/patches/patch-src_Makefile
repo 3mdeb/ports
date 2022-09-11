@@ -1,0 +1,43 @@
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -17,7 +17,8 @@ STATICTARGETS=$(STATICLIBTARGETS) $(STATICBINTARGETS)
+ LIBEFISEC_SOURCES = sec.c secdb.c esl-iter.c util.c
+ LIBEFISEC_OBJECTS = $(patsubst %.c,%.o,$(LIBEFISEC_SOURCES))
+ LIBEFIBOOT_SOURCES = crc32.c creator.c disk.c gpt.c loadopt.c path-helpers.c \
+-		     linux.c $(sort $(wildcard linux-*.c))
++		     linux.c \
++		     dp.c $(sort $(wildcard dp-*.c)) error.c guid.c guid-symbols.c
+ LIBEFIBOOT_OBJECTS = $(patsubst %.c,%.o,$(LIBEFIBOOT_SOURCES))
+ LIBEFIVAR_SOURCES = crc32.c dp.c dp-acpi.c dp-hw.c dp-media.c dp-message.c \
+ 	efivarfs.c error.c export.c guid.c guid-symbols.c \
+@@ -60,7 +61,7 @@ abidw : $(patsubst %.so,%.abixml,$(LIBTARGETS))
+ abicheck : $(patsubst %.so,%.abicheck,$(LIBTARGETS))
+ 
+ makeguids : CPPFLAGS=$(HOST_CPPFLAGS)
+-makeguids : LIBS=dl
++makeguids : LIBS=
+ makeguids : CC=$(HOSTCC)
+ makeguids : CCLD=$(HOSTCCLD)
+ makeguids : CFLAGS=$(HOST_CFLAGS)
+@@ -85,7 +86,7 @@ $(MAKEGUIDS_OUTPUT) : guids.txt
+ 
+ prep : makeguids $(GENERATED_SOURCES)
+ 
+-$(LIBEFIVAR_OBJECTS) $(LIBEFIBOOT_OBJECTS) : prep
++$(LIBEFIVAR_OBJECTS) $(LIBEFIBOOT_OBJECTS) : include/efivar/efivar-guids.h
+ 
+ libefivar.a : | $(GENERATED_SOURCES)
+ libefivar.a : $(patsubst %.o,%.static.o,$(LIBEFIVAR_OBJECTS))
+@@ -106,8 +107,9 @@ efivar-static : LIBS=dl
+ libefiboot.a : $(patsubst %.o,%.static.o,$(LIBEFIBOOT_OBJECTS))
+ 
+ libefiboot.so : $(LIBEFIBOOT_OBJECTS)
+-libefiboot.so : | libefiboot.map libefivar.so
+-libefiboot.so : LIBS=efivar
++libefiboot.so : | libefiboot.map
++libefiboot.so : LIBS=
++libefiboot.so : LDSCRIPTS=guids.lds
+ libefiboot.so : MAP=libefiboot.map
+ 
+ libefisec.a : $(patsubst %.o,%.static.o,$(LIBEFISEC_OBJECTS))
