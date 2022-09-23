@@ -1,0 +1,14 @@
+Don't hard-code soname into shared libraries
+
+Index: src/include/defaults.mk
+--- src/include/defaults.mk.orig
++++ src/include/defaults.mk
+@@ -65,7 +65,7 @@ SOFLAGS_CLANG =
+ SOFLAGS ?=
+ override _SOFLAGS := $(SOFLAGS)
+ override SOFLAGS = $(_SOFLAGS) \
+-		   -shared -Wl,-soname,$@.1 \
++		   -shared \
+ 		   -Wl,--version-script=$(MAP) \
+ 		   $(call family,SOFLAGS)
+ 
